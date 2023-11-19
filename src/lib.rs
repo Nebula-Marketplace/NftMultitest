@@ -50,11 +50,11 @@ pub fn instantiate(
 
 pub fn execute<T: Serialize + Debug + Deserialize<'static> + JsonSchema>(
     app: &mut App,
-    contract_addr: Addr,
+    contract_addr: &Addr,
     msg: &cw721_base::msg::ExecuteMsg<T>,
 ) -> Result<AppResponse, Box<dyn std::error::Error>> {
     let res = app.execute_contract(
-        contract_addr, 
+        Addr::unchecked(contract_addr.to_string()), 
         Addr::unchecked("owner"),
         msg,
         &vec![]
@@ -63,7 +63,7 @@ pub fn execute<T: Serialize + Debug + Deserialize<'static> + JsonSchema>(
 }
 
 pub fn query<T: Serialize + Debug + JsonSchema + for<'de> Deserialize<'de>>(
-    contract: Cw721Contract,
+    contract: &Cw721Contract,
     query: QueryMsg,
     querier: &QuerierWrapper,
 ) -> Result<QueryResponse<T>, Box<dyn std::error::Error>> {
