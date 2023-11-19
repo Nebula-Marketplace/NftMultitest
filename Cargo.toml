@@ -1,0 +1,14 @@
+[package]
+name = "nft_multi_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cw-multi-test = "0.18.0"
+cw721-base = "0.13.2" # Talis spec
+cosmwasm-std = "1.5.0"
+serde = { version = "1.0.130", features = ["derive"] }
+schemars = { version = "0.8.1", features = ["chrono"] }
+cw721 = "0.13.2"
