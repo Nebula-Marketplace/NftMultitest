@@ -3,7 +3,7 @@ use cw_multi_test::{ContractWrapper, Contract, Executor, App, AppResponse};
 use cosmwasm_std::{Empty, Addr, QuerierWrapper};
 use schemars::JsonSchema;
 use serde::{Serialize, Deserialize};
-pub use cw721_base::msg::{ExecuteMsg, InstantiateMsg, QueryMsg}; // re-export cw721_base messages for convenience
+pub use cw721_base::msg::{ExecuteMsg, InstantiateMsg, QueryMsg, MintMsg}; // re-export cw721_base messages for convenience
 use cw721_base::{helpers::Cw721Contract};
 use cw721::{
     OwnerOfResponse, 
